@@ -15,10 +15,10 @@
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:background="@drawable/bg_circle_light"
-        android:src="@drawable/ic_back"
         android:contentDescription="Volver"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Título -->
     <TextView
@@ -31,18 +31,18 @@
         android:textColor="#1E1E1E"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/btnBack"
         app:layout_constraintStart_toEndOf="@id/btnBack"
-        app:layout_constraintTop_toTopOf="@id/btnBack" />
+        app:layout_constraintTop_toTopOf="@id/btnBack"
+        app:layout_constraintBottom_toBottomOf="@id/btnBack" />
 
-    <!-- Imagen de carga de producto (círculo) -->
+    <!-- Imagen -->
     <FrameLayout
         android:id="@+id/flImagen"
         android:layout_width="120dp"
         android:layout_height="120dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintTop_toBottomOf="@id/btnBack"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="24dp">
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:id="@+id/imgProducto"
@@ -53,13 +53,13 @@
 
         <ImageButton
             android:id="@+id/btnSubirImagen"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="@drawable/bg_circle_small"
-            android:src="@drawable/ic_upload"
-            android:contentDescription="Subir imagen"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_gravity="bottom|end"
-            android:layout_margin="4dp" />
+            android:layout_margin="4dp"
+            android:background="@drawable/bg_circle_small"
+            android:contentDescription="Subir imagen"
+            android:src="@drawable/ic_upload" />
     </FrameLayout>
 
     <!-- Texto guía -->
@@ -67,21 +67,21 @@
         android:id="@+id/tvInstruccionImagen"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
         android:fontFamily="@font/sen"
-        android:text="Agrega una imagen de tu producto"
+        android:text="Agrega una imagen del producto"
         android:textColor="#888888"
         android:textSize="14sp"
-        app:layout_constraintTop_toTopOf="@id/flImagen"
-        app:layout_constraintStart_toEndOf="@id/flImagen"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="12dp" />
+        app:layout_constraintStart_toEndOf="@id/flImagen"
+        app:layout_constraintTop_toTopOf="@id/flImagen" />
 
     <!-- Nombre del producto -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilNombre"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/sen"
+        android:layout_marginTop="24dp"
         android:hint="Nombre del producto"
         app:boxBackgroundMode="filled"
         app:boxBackgroundColor="#F7F9FC"
@@ -91,8 +91,7 @@
         app:boxCornerRadiusBottomEnd="8dp"
         app:layout_constraintTop_toBottomOf="@id/flImagen"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etNombreProducto"
@@ -105,7 +104,7 @@
         android:id="@+id/tilDescripcion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/sen"
+        android:layout_marginTop="12dp"
         android:hint="Descripción del producto"
         app:boxBackgroundMode="filled"
         app:boxBackgroundColor="#F7F9FC"
@@ -115,8 +114,7 @@
         app:boxCornerRadiusBottomEnd="8dp"
         app:layout_constraintTop_toBottomOf="@id/tilNombre"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etDescripcionProducto"
@@ -129,7 +127,7 @@
         android:id="@+id/tilPrecio"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/sen"
+        android:layout_marginTop="12dp"
         android:hint="Precio del producto"
         app:boxBackgroundMode="filled"
         app:boxBackgroundColor="#F7F9FC"
@@ -139,8 +137,7 @@
         app:boxCornerRadiusBottomEnd="8dp"
         app:layout_constraintTop_toBottomOf="@id/tilDescripcion"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etPrecioProducto"
@@ -152,8 +149,9 @@
     <!-- Categoría -->
     <TextView
         android:id="@+id/tvCategoria"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/sen"
         android:text="Seleccionar Categoría"
         android:textColor="#888888"
@@ -163,11 +161,12 @@
         android:padding="16dp"
         app:layout_constraintTop_toBottomOf="@id/tilPrecio"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Línea -->
     <View
-        android:layout_width="match_parent"
+        android:id="@+id/lineaSeparadora"
+        android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="#CCCCCC"
         app:layout_constraintTop_toBottomOf="@id/tvCategoria"
@@ -179,13 +178,13 @@
         android:id="@+id/btnAgregarProducto"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/sen"
+        android:layout_marginTop="24dp"
         android:text="AGREGAR PRODUCTO"
         android:textAllCaps="true"
         android:backgroundTint="#FF6C44"
         android:textColor="#FFFFFF"
-        android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@id/tvCategoria"
+        android:fontFamily="@font/sen"
+        app:layout_constraintTop_toBottomOf="@id/lineaSeparadora"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
